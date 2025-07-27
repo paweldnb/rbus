@@ -12,5 +12,5 @@ The project aims to read and decode the r-bus form what a great implementation a
 
    <img width="500" height="200" alt="Zrzut ekranu 2025-07-27 144858" src="https://github.com/user-attachments/assets/de988544-8fe5-4678-b5b7-bb2f5024e055" />
 
-3. 
+2. Arduino code based onf Esp32 ( you can use esp8266 as well , just connect and change code )  : [esp320sniffer.ino](https://github.com/paweldnb/rbus/blob/main/esp32-sniffer.ino)
    

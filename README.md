@@ -13,4 +13,16 @@ The project aims to read and decode the r-bus form what a great implementation a
    <img width="500" height="200" alt="Zrzut ekranu 2025-07-27 144858" src="https://github.com/user-attachments/assets/de988544-8fe5-4678-b5b7-bb2f5024e055" />
 
 2. Arduino code based on Esp32-wroom-32u ( you can use esp8266 as well , just connect and change code )  : [esp320sniffer.ino](https://github.com/paweldnb/rbus/blob/main/esp32-sniffer.ino)
+3. When i have hardare sniffer and some basic code to decoding basic 8n1 bytes i can go procced into litle more advanced decding  [telnet_sniffer_daemon.py](https://github.com/paweldnb/rbus/blob/main/telnet_sniffer_daemon.py)i notice that frames was staring with `01 00` and begining so: 
+```python
+
+            frame = data[index:index + frame_len]
+            header = frame[0:2].hex() <--------------2bytes
+            req_reply = frame[2:3].hex()<------------1bytes
+            flags = frame[3:4].hex()<----------------1bytes
+            payload_len_hex = frame[4:5].hex()<------1bytes         
+            unknown = frame[5:8]<--------------------1bytes
+            payload = frame[8:]<---------------------defined by payload_len_hex 
+```
+4. In firts 3 first bytes on payload seems to be some kind of register on boiler or termostat that controls that boiler. That register are gropuped in files in `sniffing_data` folder ( on code from #3 variable `BASE`"
    
